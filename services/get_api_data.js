@@ -13,7 +13,12 @@ export const getHomeNewsData = (newsData) => {
     let homePageNews = news.filter(newsItem => {
         return newsItem.showOnHomepage === true ;
     });
-    return homePageNews;
+    return homePageNews.slice(0, 6);
+};
+
+export const getNewsData = (newsData) => {
+  const allNews = get(newsData,`[${0}].data.articles`, []);
+  return allNews;
 };
 
 export const getLatestNewsData = (newsData) => {

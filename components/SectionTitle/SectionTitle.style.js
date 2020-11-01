@@ -20,7 +20,7 @@ const SectionTitleWrapper = styled.div`
   }
 
   a {
-    color: ${themeGet('text.0', '#2C2C2C')};
+    color: ${themeGet('text.4', '#2C2C2C')};
     font-size: 17px;
     line-height: 21px;
     font-weight: 400;

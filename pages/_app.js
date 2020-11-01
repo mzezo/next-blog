@@ -7,21 +7,21 @@ import { ThemeProvider } from 'styled-components';
 import theme from 'themes/default.theme';
 import GlobalStyles from 'assets/style/Global.style';
 import Layout from 'container/Layout/Layout';
-// import { SearchProvider } from 'context/SearchProvider';
+import { SearchProvider } from 'context/SearchProvider';
 import 'antd/dist/antd.css';
 
 function App({ Component, router, pageProps }) {
   const { query } = router;
 
   return (
-    //   <SearchProvider query={query}>
+      <SearchProvider query={query}>
           <ThemeProvider theme={theme}>
             <Layout>
               <GlobalStyles />
               <Component {...pageProps} />
             </Layout>
           </ThemeProvider>
-    //   </SearchProvider>
+      </SearchProvider>
   );
 }
 

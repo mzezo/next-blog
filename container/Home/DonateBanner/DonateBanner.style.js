@@ -98,16 +98,14 @@ export const SearchWrapper = styled.div`
 
   @media only screen and (min-width: 569px) and (max-width: 991px) {
     width: 414px;
-    left: 30px;
   }
 
   @media only screen and (max-width: 480px) {
     width: calc(100% - 30px);
     padding: 15px;
-    left: 15px;
 
     > p {
-      display: none;
+      /* display: none; */
     }
   }
 
@@ -164,53 +162,7 @@ export const SearchWrapper = styled.div`
   }
 `;
 
-export const FormWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  background-color: ${themeGet('color.2', '#F7F7F7')};
-  border-radius: 3px 0 0 3px;
-  min-height: 60px;
 
-  @media only screen and (max-width: 991px) {
-    flex-direction: column;
-  }
-
-  @media only screen and (max-width: 480px) {
-    margin-top: 10px;
-  }
-
-  /* submit button style */
-  button[type='submit'].ant-btn {
-    min-width: 157px;
-    height: 60px;
-    color: ${themeGet('color.1', '#ffffff')};
-    background-color: ${themeGet('primary.0', '#008489')};
-    border-radius: 0 3px 3px 0;
-    border: 0;
-    box-shadow: none;
-    font-size: 15px;
-    font-weight: 700;
-    text-shadow: none;
-
-    @media only screen and (max-width: 991px) {
-      min-width: 100%;
-      border-radius: 0 0 3px 3px;
-    }
-
-    @media only screen and (max-width: 480px) {
-      height: 47px;
-    }
-
-    &::after {
-      display: none;
-    }
-
-    &:hover {
-      opacity: 0.85;
-    }
-  }
-`;
 
 export const ComponentWrapper = styled.div`
   display: flex;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 // import ImagePlaceHolder from 'assets/images/hotelImagePlaceholder.jpg';
 import { get } from 'lodash';
-import { TopHotelsContainer, HotelsContainer, HotelContainer, HotelData, PriceRateContainer  } from './NewsSection.style';
+import { TopNewsWrapper, NewsWrapper } from './NewsSection.style';
 import NewsItem from './NewsItem';
 
 const NewsSection = ({homeNewsData}) => {
@@ -11,34 +11,22 @@ const NewsSection = ({homeNewsData}) => {
     }, []);
 
     return (
-        <TopHotelsContainer>
+        <TopNewsWrapper>
             {get(homeNewsData, 'length', 0) > 0 ?
                 <React.Fragment>
-                    <HotelsContainer>
-                        {homeNewsData.slice(0, 6).map((newsItem, index) => {
+                    <NewsWrapper>
+                        {homeNewsData.map((newsItem, index) => {
                             return (
                                 <NewsItem {...newsItem}/>
-                                
-                                // // <Link to={{ pathname: `/hotels/hotelDetails/booking/${get(hotel, 'hotel_id')}/${get(hotel, 'hotel_name')}/${checkinUrl}/${checkoutUrl}`, state: { hotel: hotel } }} key={get(hotel, 'hotel_id')}>
-                                //     <HotelContainer key={index}>
-                                //         <img src={get(hotel, 'urlToImage')} alt={get(hotel, 'name', "-")} />
-                                //         <HotelData>
-                                //             <p>{get(hotel, 'title', "not Found")}</p>
-                                //             <PriceRateContainer>
-                                                
-                                //             </PriceRateContainer>
-                                //         </HotelData>
-                                //     </HotelContainer>
-                                // // </Link>
                             );
                         })}
-                    </HotelsContainer>
+                    </NewsWrapper>
                 </React.Fragment>
                 :
                 (
                     ''
                 )}
-        </TopHotelsContainer>
+        </TopNewsWrapper>
     )
 }
 export default NewsSection;

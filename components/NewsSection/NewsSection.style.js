@@ -1,11 +1,9 @@
 import styled from 'styled-components';
 
-export const TopHotelsContainer = styled.div`
+
+export const TopNewsWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  @media (max-width: 960px) {
-    margin-top: 320px;
- }
 `;
 
 export const SpinnerOverlay = styled.div`
@@ -16,8 +14,7 @@ export const SpinnerOverlay = styled.div`
   align-items: center;
 `;
 
-
-export const HotelsContainer = styled.div`
+export const NewsWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
@@ -31,46 +28,17 @@ export const HotelsContainer = styled.div`
     }
 `;
 
-export const HotelContainer = styled.div`
-    img{
-        width: 100%;
-        height: 211.96px;
-        border-radius: 5px 5px 0px 0px;
-        box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.2);
-    }
-`;
-
 export const NewsItemWrapper = styled.div`
     img{
         width: 100%;
         height: 190px;
+        min-height: 190px;
         border-radius: 5px 5px 0px 0px;
         box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.2);
     }
 `;
 
-export const Image = styled.img`
-    width: 100%;
-    height: 211.96px;
-    border-radius: 5px 5px 0px 0px;
-    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.2);
-`;
 
-export const HotelData = styled.div`
-    background: #FFFFFF;
-    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.2);
-    border-radius: 0px 0px 5px 5px;
-
-    p{
-        margin-left: 10%;
-        padding-top: 13px;
-        margin-bottom: 11px;
-        font-size: 20px;
-        line-height: 23px;
-        color: #0DB9DD;
-        text-align: left;
-    }
-`;
 
 export const IconsWrapper = styled.div`
     display: flex;
@@ -133,24 +101,4 @@ export const NewsItemDetailsWrapper = styled.div`
     }
 `;
 
-export const HotelName = styled.p`
-    margin-left: 10%;
-    padding-top: 13px;
-    margin-bottom: 11px;
-    font-size: 20px;
-    line-height: 23px;
-    color: #0DB9DD;
-    text-align: left;
-`;
 
-export const PriceRateContainer = styled.div`
-    display: flex;
-    justify-content: space-between;
-    color: #0DB9DD;
-    margin-left: 10%;
-    margin-right: 5%;
-    padding-bottom: 15px;
-    strong {
-        color: #005997;
-    }
-`;

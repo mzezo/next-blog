@@ -50,7 +50,7 @@ const HomeSearch = ({ searchTitleStyle, searchDescriptionStyle }) => {
                         type="primary"
                         htmlType="submit"
                         size="large"
-                        //onClick={goToSearchPage}
+                        //onClick={handleDonateNow}
                     >
                         Donate Now
                     </Button>

@@ -71,7 +71,7 @@ const HeaderWrapper = styled.header`
 
           a {
             img {
-              opacity: 0;
+              /* opacity: 0; */
             }
 
             h3 {
@@ -85,7 +85,6 @@ const HeaderWrapper = styled.header`
     &.isHeaderSticky {
       nav {
         &.is_transparent {
-          /* background-color: ${themeGet('color.1', '#ffffff')}; */
           background-color: ${themeGet('color.3', '#008489')};
           box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 
@@ -108,13 +107,10 @@ const HeaderWrapper = styled.header`
           .ant-menu {
             li {
               a {
-                /* color: ${themeGet('text.0', '#2C2C2C')}; */
                 color: ${themeGet('color.1', '#ffffff')};
                 &:hover {
-                  /* color: ${themeGet('primary.0', '#008489')}; */
                 }
                 &.active {
-                  /* color: ${themeGet('primary.0', '#008489')}; */
                   border-bottom: 3px solid ${themeGet('primary.0', '#008489')};
                 }
               }
@@ -135,7 +131,7 @@ const HeaderWrapper = styled.header`
         }
 
         &.transparent {
-          background-color: ${themeGet('color.1', '#ffffff')};
+          background-color: ${themeGet('primary.0', '#008489')};
           box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 
           > div > div {
@@ -244,31 +240,6 @@ export const LogoArea = styled.div`
   }
 `;
 
-export const CloseDrawer = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  padding: 20px 15px 12px;
-
-  > button {
-    border: 0;
-    padding: 0;
-    background-color: transparent;
-    font-size: 38px;
-    line-height: 1;
-    height: auto;
-    display: inline-flex;
-    align-items: center;
-    cursor: pointer;
-    color: ${themeGet('text.1', '#909090')};
-    transition: all 0.3s ease;
-
-    &:hover,
-    &:focus {
-      outline: 0;
-      color: ${themeGet('text.0', '#2C2C2C')};
-    }
-  }
-`;
 
 export const AvatarWrapper = styled.div`
   display: flex;

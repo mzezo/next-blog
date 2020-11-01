@@ -95,7 +95,7 @@ export const SettingsWrapper = styled.div`
         visibility: visible;
       }
       li {
-        color: ${themeGet('text.0', '#2C2C2C')};
+        color: ${themeGet('color.1', '#ffffff')};
         font-size: 15px;
         line-height: 18px;
         font-weight: 400;
@@ -119,7 +119,7 @@ export const SettingsWrapper = styled.div`
           display: flex;
           align-items: center;
           padding: 4px 6px;
-          color: ${themeGet('text.0', '#2C2C2C')} !important;
+          color: ${themeGet('text.0', '#2C2C2C')};;
           transition: color 0.2s ease-in-out;
           &:hover {
             color: ${themeGet('primary.0', '#008489')};
@@ -184,5 +184,4 @@ export const SettingsWrapper = styled.div`
         }
       }
     }
-  }
 `;

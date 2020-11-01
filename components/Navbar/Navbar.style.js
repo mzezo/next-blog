@@ -99,7 +99,7 @@ export const MenuWrapper = styled.div`
       padding: 0 15px;
       height: auto;
       margin-bottom: 0 !important;
-      color: ${themeGet('text.0', '#2C2C2C')};
+      color: ${themeGet('color.1', '#ffffff')};
       font-size: 15px;
       line-height: 18px;
       font-weight: 400;
@@ -124,7 +124,7 @@ export const MenuWrapper = styled.div`
         align-items: center;
         /* padding: 30px 16px; */
         padding: 5px 8px;
-        color: ${themeGet('text.0', '#2C2C2C')};
+        color: ${themeGet('color.1', '#ffffff')};
         transition: color 0.2s ease-in-out;
         @media only screen and (max-width: 1200px) {
           padding: 30px 10px;

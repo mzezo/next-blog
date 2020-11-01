@@ -7,6 +7,7 @@ import Heading from 'components/UI/Heading/Heading';
 import SectionTitle from 'components/SectionTitle/SectionTitle';
 import GetAPIData, { getLatestNewsData, getHomeNewsData } from 'services/get_api_data';
 import NewsSection from 'components/NewsSection/NewsSection';
+import { ArrowRight } from "@styled-icons/bootstrap";
 
 export default function Home({ newsData }) {
 
@@ -28,12 +29,12 @@ export default function Home({ newsData }) {
 
       <main>
         <DonateBanner />
-        <Container noGutter={true}>
+        <Container>
           <SectionTitle
             title={<Heading content="Latest News" />}
             link={
-              <Link href='/'>
-                <a>View all</a>
+              <Link href='/news'>
+                <a>View all <ArrowRight size={22}/> </a>
               </Link>
             }
           />
@@ -54,14 +55,6 @@ export async function getServerSideProps(context) {
   ];
   const pageData = await GetAPIData(apiUrl);
   let newsData = pageData;
-
-  // if (pageData) {
-  //   pageData.forEach((item, key) => {
-  //     if (item.name === 'NewsHome') {
-  //       newsHomeData = item.data ? [...item.data] : [];
-  //     } 
-  //   });
-  // }
 
   return {
     props: { newsData },
