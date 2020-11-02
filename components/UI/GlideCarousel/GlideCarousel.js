@@ -11,6 +11,7 @@ import GlideWrapper, {
 } from './GlideCarousel.style';
 
 import { Button } from 'antd';
+import { LeftOutlined, RightOutlined   } from '@ant-design/icons';
 
 const GlideCarousel = ({
   className,
@@ -64,10 +65,10 @@ const GlideCarousel = ({
           data-glide-el="controls"
         >
           <ButtonWrapper className="glide__prev--area" data-glide-dir="<">
-            {prevButton ? prevButton :  <DefaultBtn value=">"> </DefaultBtn>}
+            {prevButton ? prevButton :  <DefaultBtn value=">"> <LeftOutlined /></DefaultBtn>}
           </ButtonWrapper>
           <ButtonWrapper className="glide__next--area" data-glide-dir=">">
-            {nextButton ? nextButton : <DefaultBtn value=">">  </DefaultBtn>}
+            {nextButton ? nextButton : <DefaultBtn value=">"> <RightOutlined /> </DefaultBtn>}
           </ButtonWrapper>
         </ButtonControlWrapper>
       )}

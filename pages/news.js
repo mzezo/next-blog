@@ -10,19 +10,30 @@ import CategorySearch from 'container/Listing/CategorySearch/CategorySearch';
 import NewsSection from 'components/NewsSection/NewsSection';
 import ListingWrapper, { } from 'container/Listing/Listing.style';
 import { getDeviceType } from 'services/get_device_type';
-import GetAPIData , { getNewsData } from 'services/get_api_data';
+import GetAPIData, { getNewsData, Paginator } from 'services/get_api_data';
 
 export default function NewsPage({ newsData, deviceType }) {
     console.log('----NewsPage-newsData----', newsData)
     // const { state, dispatch } = useContext(SearchContext);
     // const statekey = SearchStateKeyCheck(state);
     const [news, setNews] = useState([]);
-    // const [loading, setLoading] = useState(false);
+    const [allNews, setAllNews] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         const PageNews = getNewsData(newsData);
-        setNews(PageNews);
+        setNews(PageNews.slice(0, 9));
+        setAllNews(PageNews);
     }, []);
+
+    const handleLoadMore = () => {
+        setLoading(true);
+        setTimeout(() => {
+            const data = Paginator(news, allNews, 9);
+            setNews(data);
+            setLoading(false);
+        }, 1000);
+    };
 
     return (
         <ListingWrapper>
@@ -30,22 +41,26 @@ export default function NewsPage({ newsData, deviceType }) {
                 <title>News</title>
             </Head>
             <Container noGutter={true}>
-               
-
                 {/* <Sticky top={82} innerZ={999} activeClass="isHeaderSticky"> */}
-                    <SectionTitle
-                        title={<Heading content="News" />}
-                    />
-                    <Toolbar
-                        left={
-                            deviceType === 'desktop' ? <CategorySearch  newsData={newsData}/>
-                                :
-                                // <FilterDrawer />
-                                ''
-                        }
-                    />
+                <SectionTitle
+                    title={<Heading content="News" />}
+                />
+                <Toolbar
+                    left={
+                        deviceType === 'desktop' ? <CategorySearch newsData={newsData} />
+                            :
+                            // <MobileFilterDrawer />
+                            ''
+                    }
+                />
                 {/* </Sticky> */}
-                <NewsSection homeNewsData={news}/>
+
+                <NewsSection 
+                    homeNewsData={news} 
+                    handleLoadMore={handleLoadMore} 
+                    loading={loading} 
+                    totalItem={allNews.length} 
+                />
             </Container>
         </ListingWrapper>
     );
@@ -57,12 +72,12 @@ export async function getServerSideProps(context) {
 
     const apiUrl = [
         {
-          endpoint: 'newsapi',
-          name: 'NewsHome',
+            endpoint: 'newsapi',
+            name: 'NewsHome',
         }
-      ];
-      const pageData = await GetAPIData(apiUrl);
-      let  newsData = pageData;
+    ];
+    const pageData = await GetAPIData(apiUrl);
+    let newsData = pageData;
     return {
         props: { newsData, deviceType },
     };

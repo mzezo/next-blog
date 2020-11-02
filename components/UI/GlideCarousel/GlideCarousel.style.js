@@ -6,9 +6,25 @@ const GlideWrapper = styled.div`
     margin-bottom: 0;
   }
   .glide__controls {
-    .glide__prev--area,
-    .glide__next--area {
+    .glide__prev--area{
+      position: absolute;
       cursor: pointer;
+      top: 48%;
+      left: 5%;
+      @media only screen and (max-width: 762px) {
+        /* left: 2%; */
+        display: none;
+      }
+    }
+    .glide__next--area {
+      position: absolute;
+      cursor: pointer;
+      top: 48%;
+      left: 90%;
+      @media only screen and (max-width: 762px) {
+        /* left: 88%; */
+        display: none;
+      }
     }
   }
 `;
@@ -55,6 +71,11 @@ const BulletButton = styled.button`
 const DefaultBtn = styled.button`
   cursor: pointer;
   margin: 10px 3px;
+  padding: 6px 12px;
+
+  @media only screen and (max-width: 762px) {
+    padding: 3px 6px;
+  }
 `;
 
 export {

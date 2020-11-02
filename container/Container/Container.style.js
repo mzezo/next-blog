@@ -16,8 +16,8 @@ const ContainerWrapper = styled.div`
         padding-right: 0;
       `) ||
     css`
-      padding-left: 30px;
-      padding-right: 30px;
+      /* padding-left: 30px;
+      padding-right: 30px; */
 
       @media only screen and (max-width: 480px) {
         padding-left: 25px;
@@ -46,8 +46,8 @@ const ContainerWrapper = styled.div`
     width: 100%;
   }
 
-  @media (min-width: 1200px) {
-    max-width: 1170px;
+  @media (min-width: 1400px) {
+    max-width: 1265px;
     width: 100%;
   }
 `;

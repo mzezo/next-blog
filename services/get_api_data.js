@@ -30,6 +30,10 @@ export const getLatestNewsData = (newsData) => {
     //return newsData[0].data.articles.sort((a,b)=>a.publishedAt.getTime()-b.publishedAt.getTime());
 };
 
+export const Paginator = (posts, processedData, limit) => {
+  return [...posts, ...processedData.slice(posts.length, posts.length + limit)];
+};
+
 const GetAPIData = async (apiUrl) => {
     const promises = apiUrl.map(async (repo) => {
       const apiPath = `${process.env.SERVER_API}/static/data`; // read it from env variable

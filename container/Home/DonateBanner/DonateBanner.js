@@ -8,18 +8,12 @@ import GlideCarousel, {
 import BannerWrapper, { SearchWrapper, BannerImage } from './DonateBanner.style';
 import { Button } from 'antd';
 
-// slider images
-// import bannerBg1 from 'assets/images/banner/1.jpg';
-// import bannerBg2 from 'assets/images/banner/2.jpg';
-// import bannerBg3 from 'assets/images/banner/3.jpg';
-
 const HomeSearch = ({ searchTitleStyle, searchDescriptionStyle }) => {
     return (
         <BannerWrapper>
             <GlideCarousel
                 controls={true}
-                // prevButton={false}
-                options={{ gap: 0, autoplay: 5000, animationDuration: 1000 }}
+                options={{ gap: 0, autoplay: 9000, animationDuration: 1000 }}
                 bullets={true}
                 numberOfBullets={3}
             >
