@@ -36,7 +36,7 @@ const CategroySearchWrapper = styled.div`
   /* Select Style */
   .ant-select-lg {
     max-width: 180px;
-    min-width: 180px;
+    /* min-width: 180px; */
     /* min-height: 55px; */
   }
 

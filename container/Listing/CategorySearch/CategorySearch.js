@@ -5,7 +5,8 @@ import ViewWithPopup from 'components/UI/ViewWithPopup/ViewWithPopup';
 import { SearchContext } from 'context/SearchProvider';
 import { setStateToUrl } from 'services/url_handler';
 import queryString from "query-string";
-import Router from 'next/router'
+import Router from 'next/router';
+import { handleFilterNews } from 'services/get_api_data'; 
 import CategroySearchWrapper, {
   DateWrapper,
   ItemWrapper,
@@ -31,11 +32,11 @@ function serchReducer(state, action) {
       case 'sourceCategory':
         return {
           ...state,
-          sourceCategory: action.payload };
+          sourceID: action.payload };
       case 'searchByName':
         return {
           ...state,
-          searchName: action.payload,
+          title: action.payload,
         };
       default:
         return state;
@@ -48,8 +49,8 @@ const CategorySearchNext = (props) => {
     const initialState = {
       startDate: get(searchItems, 'startDate' , ''),
       endDate: get(searchItems, 'endDate' , ''),
-      sourceCategory: get(searchItems, 'sourceCategory' , 0 ),
-      searchName: get(searchItems, 'searchName', ''),
+      sourceID: get(searchItems, 'sourceID' , 0 ),
+      title: get(searchItems, 'title', ''),
     };
   
     // current component state with dispatching to reducer
@@ -108,7 +109,7 @@ const CategorySearchNext = (props) => {
         let query = {};
         query = {
           ...current,
-          sourceCategory: value,
+          sourceID: value,
         };
         dispatchCurrent({ type: 'sourceCategory', payload: value });
         const params = setStateToUrl(query);
@@ -119,6 +120,8 @@ const CategorySearchNext = (props) => {
             ...query,
           },
         });
+        const filteredNews = handleFilterNews(query, get(NewsData, `articles`, []));
+        console.log('filteredNews', filteredNews)
         Router.push({
           pathname: '/news',
           query: encodeURI(params) ,
@@ -129,7 +132,7 @@ const CategorySearchNext = (props) => {
         let query = {};
         query = {
           ...current,
-          searchName: value,
+          title: value,
         };
         dispatchCurrent({ type: 'searchByName', payload: value });
         const params = setStateToUrl(query);
@@ -140,6 +143,8 @@ const CategorySearchNext = (props) => {
             ...query,
           },
         });
+        const filteredNews = handleFilterNews(query, get(NewsData, `articles`, []));
+        console.log('filteredNews', filteredNews)
         Router.push({
           pathname: '/news',
           query: encodeURI(params) ,
