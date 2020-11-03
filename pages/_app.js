@@ -9,6 +9,24 @@ import GlobalStyles from 'assets/style/Global.style';
 import Layout from 'container/Layout/Layout';
 import { SearchProvider } from 'context/SearchProvider';
 import 'antd/dist/antd.css';
+import { Router } from 'next/dist/client/router';
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css';
+
+// NProgress.configure({ showSpinner: false });
+
+Router.events.on('routeChangeStart', () => {
+  NProgress.start();
+})
+
+Router.events.on('routeChangeComplete', () => {
+  NProgress.done();
+})
+
+Router.events.on('routeChangeError', () => {
+  NProgress.done();
+})
+
 
 function App({ Component, router, pageProps }) {
   const { query } = router;

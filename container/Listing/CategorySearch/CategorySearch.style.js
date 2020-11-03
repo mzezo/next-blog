@@ -12,23 +12,37 @@ const CategroySearchWrapper = styled.div`
     }
   }
 
+
+
   /* Date Picker Style */
-  .ant-picker {
-    /* padding: 6.5px 32px 6.5px 12px; */
-    .ant-picker-input{
-        /* min-height: 45px; */
-        .ant-picker-suffix {
-            margin-left: 55px;
-            color: ${themeGet('text.4', '#2C2C2C')};
-            .anticon svg {
-                font-size: 20px;
-            }
-        }
-    }
+  .ant-picker-large {
+    min-width: 180px;
+    /* min-height: 55px; */
+    //.ant-picker {
+      /* padding: 6.5px 32px 6.5px 12px; */
+      .ant-picker-input{
+          /* min-height: 45px; */
+          .ant-picker-suffix {
+              /* margin-left: 55px; */
+              color: ${themeGet('text.4', '#2C2C2C')};
+              .anticon svg {
+                  font-size: 20px;
+              }
+          }
+      }
+    //}
   }
+
+  /* Select Style */
+  .ant-select-lg {
+    max-width: 180px;
+    min-width: 180px;
+    /* min-height: 55px; */
+  }
+
     /* Search Box Style */
     .ant-input-group-wrapper {
-        width: 450px;
+        width: 420px;
         .ant-btn-primary {
             background: ${themeGet('text.4', '#2C2C2C')};
             border-color: ${themeGet('text.4', '#2C2C2C')};

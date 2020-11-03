@@ -23,7 +23,7 @@ export default function Home({ newsData }) {
     <div className="container">
       <Head>
         <title>Link Dev</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/jpg" sizes="32x32" href="assets/images/LinkdevLogo.jpg" />
       </Head>
 
       <main>

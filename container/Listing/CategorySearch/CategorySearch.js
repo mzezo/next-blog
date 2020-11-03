@@ -14,6 +14,8 @@ import CategroySearchWrapper, {
 import { ArrowDownUp } from '@styled-icons/bootstrap';
 import { DatePicker, Select, Input  } from 'antd';
 import { get } from 'lodash';
+import NewsData from 'static/data/newsapi.json';
+
 const { Option } = Select;
 const { Search } = Input;
 
@@ -56,7 +58,7 @@ const CategorySearchNext = (props) => {
     const [sourceCategories , setSourceCategories] = useState([]);
 
     useEffect(() => {
-      setSourceCategories(get(props, `newsData[${0}].data.sourceCategory`))
+      setSourceCategories(get(NewsData, `sourceCategory`, []))
     }, []);
 
     const handleonChangeStartDate = (date, dateString) => {
