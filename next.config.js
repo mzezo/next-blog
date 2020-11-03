@@ -5,7 +5,8 @@ const FilterWarningsPlugin = require('webpack-filter-warnings-plugin');
 
 const nextConfig = {
   env: {
-    SERVER_API: `http://localhost:3000`,
+    // SERVER_API: `http://localhost:3000`,
+    SERVER_API: `https://news-orcin.vercel.app/`,
   },
   webpack: (config, { isServer }) => {
     // HOTFIX: https://github.com/webpack-contrib/mini-css-extract-plugin/issues/250
