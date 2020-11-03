@@ -5,7 +5,6 @@ import FooterWrapper, {
   } from './Footer.style';
 
 const Footer = ({ menu, secondaryFooter, className, path }) => {
-  console.log('SecondaryFooter', secondaryFooter)
   return (
     <>
       <FooterWrapper id="footer" className={className} >

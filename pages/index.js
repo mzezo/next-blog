@@ -5,7 +5,7 @@ import DonateBanner from 'container/Home/DonateBanner/DonateBanner';
 import Container from 'container/Container/Container';
 import Heading from 'components/UI/Heading/Heading';
 import SectionTitle from 'components/SectionTitle/SectionTitle';
-import GetAPIData, { getLatestNewsData, getHomeNewsData } from 'services/get_api_data';
+import GetAPIData, { getLatestNewsData, getHomeNewsData, getHomeArticlesData } from 'services/get_api_data';
 import NewsSection from 'components/NewsSection/NewsSection';
 import { ArrowRight } from "@styled-icons/bootstrap";
 
@@ -14,16 +14,15 @@ export default function Home({ newsData }) {
   const [homeNewsData, setHomeNewsData] = useState([]);
 
   useEffect(() => {
-    const homePageNews = getHomeNewsData(newsData);
-    console.log('homePageNews', homePageNews)
-    setHomeNewsData(homePageNews);
+    // const homePageNews = getHomeNewsData(newsData);
+    // console.log('homePageNews', homePageNews)
+    // setHomeNewsData(homePageNews);
   }, []);
 
-  console.log('newsHomeData', newsData)
   return (
     <div className="container">
       <Head>
-        <title>Create Next App</title>
+        <title>Link Dev</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -38,7 +37,7 @@ export default function Home({ newsData }) {
               </Link>
             }
           />
-          <NewsSection homeNewsData={homeNewsData}/>
+          <NewsSection homeNewsData={newsData}/>
         </Container>
       </main>
     </div>
@@ -47,14 +46,16 @@ export default function Home({ newsData }) {
 
 export async function getServerSideProps(context) {
   const { req } = context;
-  const apiUrl = [
-    {
-      endpoint: 'newsapi',
-      name: 'NewsHome',
-    }
-  ];
-  const pageData = await GetAPIData(apiUrl);
-  let newsData = pageData;
+  // const apiUrl = [
+  //   {
+  //     endpoint: 'newsapi',
+  //     name: 'NewsHome',
+  //   }
+  // ];
+  // const pageData = await GetAPIData(apiUrl);
+  // let newsData = pageData;
+
+  let newsData =  await getHomeArticlesData();
 
   return {
     props: { newsData },

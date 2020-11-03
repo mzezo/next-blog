@@ -74,6 +74,9 @@ const GlobalStyle = createGlobalStyle`
     height: auto;
   }
 
+  .ant-layout-content {
+    background-color: #f2f2f2 !important;
+  }
   #__next {
     > .ant-layout {
       min-height: 100vh;

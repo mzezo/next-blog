@@ -29,7 +29,6 @@ export function createUrl(urlData) {
             urlData[key] = state[key] ? Moment(new Date(state[key] )).format('DD-MM-YYYY'): '';
             break;
           case 'endDate':
-            console.log('urlData[key]', urlData[key]);
             urlData[key] = state[key] ? Moment(new Date(state[key] )).format('DD-MM-YYYY') : '';
             break;
           case 'sourceCategory':
@@ -56,7 +55,6 @@ export function createUrl(urlData) {
             urlData[key] = state[key] ? Moment(new Date(state[key] )).format('DD-MM-YYYY') : '';
             break;
           case 'endDate':
-              console.log('urlData[key]', urlData[key]);
               urlData[key] = state[key] ? Moment(new Date(state[key] )).format('DD-MM-YYYY') : '';
             break;
           case 'sourceCategory':

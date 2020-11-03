@@ -60,7 +60,6 @@ const CategorySearchNext = (props) => {
     }, []);
 
     const handleonChangeStartDate = (date, dateString) => {
-      console.log(date, dateString);
       let query = {};
       query = {
         ...current,
@@ -68,7 +67,6 @@ const CategorySearchNext = (props) => {
       };
       dispatchCurrent({ type: 'startDate', payload: date });
       const params = setStateToUrl(query);
-      console.log('params', params);
       dispatch({
         type: 'UPDATE',
         payload: {
@@ -83,7 +81,6 @@ const CategorySearchNext = (props) => {
     }
 
     const handleonChangeEndDate = (date, dateString) => {
-      console.log(date, dateString);
       let query = {};
       query = {
         ...current,
@@ -91,7 +88,6 @@ const CategorySearchNext = (props) => {
       };
       dispatchCurrent({ type: 'endDate', payload: date });
       const params = setStateToUrl(query);
-      console.log('params', params);
       dispatch({
         type: 'UPDATE',
         payload: {
@@ -107,7 +103,6 @@ const CategorySearchNext = (props) => {
     }
 
       const handleSelectCategory = (value) => {
-        console.log(`selected ${value}`);
         let query = {};
         query = {
           ...current,
@@ -115,7 +110,6 @@ const CategorySearchNext = (props) => {
         };
         dispatchCurrent({ type: 'sourceCategory', payload: value });
         const params = setStateToUrl(query);
-        console.log('params', params);
         dispatch({
           type: 'UPDATE',
           payload: {
@@ -130,7 +124,6 @@ const CategorySearchNext = (props) => {
       }
   
       const onSearchSubmit = (value) => {
-        console.log('onSearchSubmit', value);
         let query = {};
         query = {
           ...current,
@@ -138,7 +131,6 @@ const CategorySearchNext = (props) => {
         };
         dispatchCurrent({ type: 'searchByName', payload: value });
         const params = setStateToUrl(query);
-        console.log('params', params);
         dispatch({
           type: 'UPDATE',
           payload: {

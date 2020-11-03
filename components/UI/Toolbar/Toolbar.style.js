@@ -4,7 +4,11 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   min-height: 70px;
-  background: ${(props) => (props.bg ? props.bg : '#fff')};
+  background: ${(props) => (props.bg ? props.bg : 'f2f2f2')};
+
+  @media only screen and (max-width: 991px) {
+    display:  none;
+  }
 `;
 
 export const Container = styled.div`

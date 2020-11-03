@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef  } from "react";
 import Box from 'components/UI/Box/Box';
 // import ImagePlaceHolder from 'assets/images/hotelImagePlaceholder.jpg';
 import { get } from 'lodash';
@@ -39,9 +39,16 @@ const NewsSection = ({
     loadMoreStyle
     }) => {
 
+    const userListRef = useRef(null);
+
     useEffect(() => {
        
     }, []);
+
+    // const handleLoadMoreClicked = () => {
+    //   handleLoadMore();
+    //   userListRef.current.scrollIntoView() 
+    // }
 
     let showButton = homeNewsData.length < totalItem;
 
@@ -49,10 +56,10 @@ const NewsSection = ({
         <TopNewsWrapper>
             {get(homeNewsData, 'length', 0) > 0 ?
                 <React.Fragment>
-                    <NewsWrapper>
+                    <NewsWrapper ref={userListRef}>
                         {homeNewsData.map((newsItem, index) => {
                             return (
-                                <NewsItem {...newsItem}/>
+                                <NewsItem key={index} {...newsItem}/>
                             );
                         })}
                     </NewsWrapper>

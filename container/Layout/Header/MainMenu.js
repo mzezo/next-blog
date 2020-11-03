@@ -36,7 +36,6 @@ const MainMenu = ({ className, router }) => {
         setSearchBox(true);
     }
     const onSearch = (value) => {
-        console.log(value);
     }
 
 

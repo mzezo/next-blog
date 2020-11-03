@@ -12,7 +12,8 @@ const fadeIn = keyframes`
 
 const ListingWrapper = styled.div`
   position: relative;
-
+  background-color: #f2f2f2;
+  margin-top: -30px;
   /* date picker component style */
   .DateRangePicker {
     .DateRangePickerInput {
@@ -44,10 +45,11 @@ const ListingWrapper = styled.div`
   /* load more wrapper style */
   .loadmore_wrapper {
     margin-top: 30px;
+    margin-bottom: 30px;
     > button {
       border: 0;
-      min-width: 115px;
-      height: 40px;
+      min-width: 135px;
+      height: 50px;
       display: inline-flex;
       align-items: center;
       justify-content: center;

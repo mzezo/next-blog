@@ -12,8 +12,8 @@ const ContainerWrapper = styled.div`
   ${(props) =>
     (props.noGutter &&
       css`
-        padding-left: 0;
-        padding-right: 0;
+        padding-left: 15px;
+        padding-right: 15px;
       `) ||
     css`
       /* padding-left: 30px;
@@ -46,8 +46,13 @@ const ContainerWrapper = styled.div`
     width: 100%;
   }
 
+  @media (min-width: 1200px) {
+    max-width: 1050px;
+    width: 100%;
+  }
+
   @media (min-width: 1400px) {
-    max-width: 1265px;
+    max-width: 1250px;
     width: 100%;
   }
 `;

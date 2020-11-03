@@ -6,6 +6,7 @@ const SectionTitleWrapper = styled.div`
   justify-content: space-between;
   align-items: baseline;
   margin: 30px 0;
+  padding-top: 30px;
 
   @media only screen and (max-width: 480px) {
     margin: 15px 0 20px;

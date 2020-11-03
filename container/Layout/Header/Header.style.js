@@ -174,7 +174,7 @@ export const MobileNavbar = styled.nav`
 
   &.default {
     border-bottom: 1px solid ${themeGet('border.3', '#E6E6E6')};
-    background-color: ${themeGet('color.1', '#ffffff')};
+    background-color: ${themeGet('primary.1', '#ffffff')};
   }
 
   .hamburg-btn {

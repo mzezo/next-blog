@@ -3,10 +3,10 @@ import { themeGet } from '@styled-system/theme-get';
 
 const FooterWrapper = styled.footer`
   width: 100%;
-  background-color: ${themeGet('colorr.1', '#f0f0f0')};
+  background-color: ${themeGet('colorr.1', '#d9d9d9')};
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
+  /* margin-top: 30px; */
   /* align-items: center; */
 `;
 
