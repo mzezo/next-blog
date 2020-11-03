@@ -16,14 +16,14 @@ const CategroySearchWrapper = styled.div`
 
   /* Date Picker Style */
   .ant-picker-large {
-    min-width: 180px;
+    /* max-width: 200px; */
     /* min-height: 55px; */
     //.ant-picker {
       /* padding: 6.5px 32px 6.5px 12px; */
       .ant-picker-input{
           /* min-height: 45px; */
           .ant-picker-suffix {
-              /* margin-left: 55px; */
+              margin-left: 25px;
               color: ${themeGet('text.4', '#2C2C2C')};
               .anticon svg {
                   font-size: 20px;
@@ -35,8 +35,8 @@ const CategroySearchWrapper = styled.div`
 
   /* Select Style */
   .ant-select-lg {
-    max-width: 180px;
-    /* min-width: 180px; */
+    /* max-width: 200px; */
+    min-width: 200px;
     /* min-height: 55px; */
   }
 
