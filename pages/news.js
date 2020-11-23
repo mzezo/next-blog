@@ -46,6 +46,7 @@ export default function NewsPage({  deviceType }) {
         <ListingWrapper>
             <Head>
                 <title>News</title>
+                <link rel="icon"  href="/LinkdevLogo.jpg" />
             </Head>
             <Container  fullWidth={true}>
                 <SectionTitle

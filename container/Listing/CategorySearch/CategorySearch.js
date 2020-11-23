@@ -69,19 +69,19 @@ const CategorySearchNext = (props) => {
       ...current,
       startDate: date,
     };
-    dispatchCurrent({ type: 'startDate', payload: date });
+    // dispatchCurrent({ type: 'startDate', payload: date });
     const params = setStateToUrl(query);
-    dispatch({
-      type: 'UPDATE',
-      payload: {
-        ...current,
-        ...query,
-      },
-    });
-    Router.push({
-      pathname: '/news',
-      query: encodeURI(params),
-    });
+    // dispatch({
+    //   type: 'UPDATE',
+    //   payload: {
+    //     ...current,
+    //     ...query,
+    //   },
+    // });
+    // Router.push({
+    //   pathname: '/news',
+    //   query: encodeURI(params),
+    // });
   }
 
   const handleonChangeEndDate = (date, dateString) => {
@@ -90,20 +90,20 @@ const CategorySearchNext = (props) => {
       ...current,
       startDate: date,
     };
-    dispatchCurrent({ type: 'endDate', payload: date });
+    // dispatchCurrent({ type: 'endDate', payload: date });
     const params = setStateToUrl(query);
-    dispatch({
-      type: 'UPDATE',
-      payload: {
-        ...current,
-        ...query,
-      },
-    });
+    // dispatch({
+    //   type: 'UPDATE',
+    //   payload: {
+    //     ...current,
+    //     ...query,
+    //   },
+    // });
 
-    Router.push({
-      pathname: '/news',
-      query: encodeURI(params),
-    });
+    // Router.push({
+    //   pathname: '/news',
+    //   query: encodeURI(params),
+    // });
   }
 
   const handleSelectCategory = (value) => {

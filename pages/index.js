@@ -27,7 +27,7 @@ export default function Home({  }) {
     <div className="container">
       <Head>
         <title>Link Dev</title>
-        <link rel="icon" type="image/jpg" sizes="32x32" href="assets/images/LinkdevLogo.jpg" />
+        <link rel="icon"  href="/LinkdevLogo.jpg" />
       </Head>
 
       <main>

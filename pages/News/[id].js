@@ -9,8 +9,9 @@ const NewsDetailsPage = ({ article }) => {
         <div className="container">
             <Head>
                 <title>{article?.title}</title>
+                <link rel="icon"  href="/LinkdevLogo.jpg" />
             </Head>
-            <Container>
+            <Container fullWidth={true}>
                 <NewsDetails {...article} />
             </Container>
         </div>
