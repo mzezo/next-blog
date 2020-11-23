@@ -42,7 +42,7 @@ const CategroySearchWrapper = styled.div`
 
     /* Search Box Style */
     .ant-input-group-wrapper {
-        width: 420px;
+        width: 320px;
         .ant-btn-primary {
             background: ${themeGet('text.4', '#2C2C2C')};
             border-color: ${themeGet('text.4', '#2C2C2C')};

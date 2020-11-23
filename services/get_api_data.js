@@ -1,11 +1,27 @@
 import fetch from 'isomorphic-unfetch';
 import { get, isEmpty } from 'lodash';
+import { Router } from 'next/dist/client/router';
+
 const FetchAPIData = (url) => {
   return fetch(url)
     .then((r) => r.json())
     .then((data) => {
       return data;
     });
+};
+
+export const SearchedData = (processedData) => {
+
+};
+
+export const SearchStateKeyCheck = (state) => {
+
+  for (var key in state) {
+    if(isEmpty(state[key])){
+      return true;
+    }
+  }
+  return false;
 };
 
 export const getHomeNewsData = (newsData) => {
@@ -37,7 +53,7 @@ export const findArticleById = async (id) => {
   return article;
 }
 
-export const findCategoryById = async (id, data) => {
+export const findCategoryById = (id, data) => {
   const categories = get(data, `sourceCategory`, []);
   const category = categories.find((item) => item.id === parseInt(id));
   return category;
@@ -64,30 +80,28 @@ export const getHomeArticlesData = async () => {
 }
 
 export const handleFilterNews = (query, news) => {
-  console.log('handleFilterNews Query', query);
+  // console.log('handleFilterNews Query', query);
   const filterKeys = Object.keys(query);
   const filteredNews = news.filter(eachObj => {
     return filterKeys.every(eachKey => {
+       
+
+
       console.log('eachKey', eachKey)
-
-      if (isEmpty(query[eachKey])) {
-        return true;
-      }
-
        /** Category Filter */
       if (eachKey === 'sourceID') {
-        console.log('eachObj[eachKey]', eachObj[eachKey]);
-        console.log('query[eachKey]', query[eachKey]);
+         console.log('eachObj[eachKey]');
         return eachObj[eachKey] === query[eachKey];
       }
-
-
+      
       /** News Title Filter */
       if (eachKey === 'title') {
         return eachObj[eachKey].toLowerCase().includes(query[eachKey].toLowerCase())
       }
 
-
+      if (isEmpty(query[eachKey])) {
+        return true;
+      }
     });
   });
   return filteredNews;

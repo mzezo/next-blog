@@ -4,7 +4,7 @@ import { NewsItemWrapper, NewsItemDetailsWrapper, IconsWrapper } from './NewsSec
 import Moment from 'moment';
 import { HeartOutlined, ShareAltOutlined, CalendarOutlined } from '@ant-design/icons'
 
-const NewsItem = ({id, title, description, urlToImage, publishedAt, content }) => {
+const NewsItem = ({ id, title, description, urlToImage, publishedAt, content }) => {
     return (
         <NewsItemWrapper>
             <Link href={`News/[id]`} as={`News/${id}`} prefetch={false}>
@@ -21,6 +21,8 @@ const NewsItem = ({id, title, description, urlToImage, publishedAt, content }) =
                     </NewsItemDetailsWrapper>
                 </a>
             </Link>
+
+
         </NewsItemWrapper>
     )
 }

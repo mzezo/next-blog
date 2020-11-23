@@ -8,12 +8,16 @@ import SectionTitle from 'components/SectionTitle/SectionTitle';
 import GetAPIData, { getLatestNewsData, getHomeNewsData, getHomeArticlesData } from 'services/get_api_data';
 import NewsSection from 'components/NewsSection/NewsSection';
 import { ArrowRight } from "@styled-icons/bootstrap";
+import newsapi from 'static/data/newsapi.json';
+import { get } from 'lodash';
 
-export default function Home({ newsData }) {
+export default function Home({  }) {
 
   const [homeNewsData, setHomeNewsData] = useState([]);
 
   useEffect(() => {
+
+    setHomeNewsData(get(newsapi, `articles`, []).slice(0, 6));
     // const homePageNews = getHomeNewsData(newsData);
     // console.log('homePageNews', homePageNews)
     // setHomeNewsData(homePageNews);
@@ -28,7 +32,7 @@ export default function Home({ newsData }) {
 
       <main>
         <DonateBanner />
-        <Container>
+        <Container fullWidth={true}>
           <SectionTitle
             title={<Heading content="Latest News" />}
             link={
@@ -37,7 +41,7 @@ export default function Home({ newsData }) {
               </Link>
             }
           />
-          <NewsSection homeNewsData={newsData}/>
+          <NewsSection homeNewsData={homeNewsData}/>
         </Container>
       </main>
     </div>
@@ -46,18 +50,10 @@ export default function Home({ newsData }) {
 
 export async function getServerSideProps(context) {
   const { req } = context;
-  // const apiUrl = [
-  //   {
-  //     endpoint: 'newsapi',
-  //     name: 'NewsHome',
-  //   }
-  // ];
-  // const pageData = await GetAPIData(apiUrl);
-  // let newsData = pageData;
 
-  let newsData =  await getHomeArticlesData();
+  // let newsData =  await getHomeArticlesData();
 
   return {
-    props: { newsData },
+    props: {  },
   };
 }

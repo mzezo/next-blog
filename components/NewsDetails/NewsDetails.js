@@ -7,8 +7,8 @@ const NewsDetails = ({id, urlToImage, title, content}) => {
 
     const[category, setCategory] = useState('');
 
-    useEffect(async () => {
-        const categoryItem =  await findCategoryById(id, NewsData);
+    useEffect(() => {
+        const categoryItem =  findCategoryById(id, NewsData);
         setCategory(categoryItem);
     }, []);
 
