@@ -30,7 +30,7 @@ export default function NewsPage({  deviceType }) {
             console.log('handleFilterNews', newData);
             setNews(newData.slice(0, 9));
             setLoading(false);
-        }, 2000);
+        }, 1000);
     }, [searchItems]);
 
     const handleLoadMore = () => {

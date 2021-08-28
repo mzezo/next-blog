@@ -121,8 +121,8 @@ const CategorySearchNext = (props) => {
         ...query,
       },
     });
-    const filteredNews = handleFilterNews(query, get(NewsData, `articles`, []));
-    console.log('handleSelectCategory', filteredNews)
+    // const filteredNews = handleFilterNews(query, get(NewsData, `articles`, []));
+    // console.log('handleSelectCategory', filteredNews)
     Router.push({
       pathname: '/news',
       query: encodeURI(params),

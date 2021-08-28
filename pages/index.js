@@ -11,17 +11,10 @@ import { ArrowRight } from "@styled-icons/bootstrap";
 import newsapi from 'static/data/newsapi.json';
 import { get } from 'lodash';
 
-export default function Home({  }) {
+export default function Home({ newsData }) {
 
   const [homeNewsData, setHomeNewsData] = useState([]);
 
-  useEffect(() => {
-
-    setHomeNewsData(get(newsapi, `articles`, []).slice(0, 6));
-    // const homePageNews = getHomeNewsData(newsData);
-    // console.log('homePageNews', homePageNews)
-    // setHomeNewsData(homePageNews);
-  }, []);
 
   return (
     <div className="container">
@@ -41,7 +34,7 @@ export default function Home({  }) {
               </Link>
             }
           />
-          <NewsSection homeNewsData={homeNewsData}/>
+          <NewsSection homeNewsData={newsData}/>
         </Container>
       </main>
     </div>
@@ -51,9 +44,9 @@ export default function Home({  }) {
 export async function getServerSideProps(context) {
   const { req } = context;
 
-  // let newsData =  await getHomeArticlesData();
+  let newsData =  await getHomeArticlesData();
 
   return {
-    props: {  },
+    props: { newsData },
   };
 }

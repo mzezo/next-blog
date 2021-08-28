@@ -1,8 +1,4 @@
-// import 'react-image-gallery/styles/css/image-gallery.css';
-// import 'react-dates/lib/css/_datepicker.css';
-// import 'react-multi-carousel/lib/styles.css';
 import '@glidejs/glide/dist/css/glide.core.min.css';
-// import 'antd/lib/date-picker/style/index.css';
 import { ThemeProvider } from 'styled-components';
 import theme from 'themes/default.theme';
 import GlobalStyles from 'assets/style/Global.style';

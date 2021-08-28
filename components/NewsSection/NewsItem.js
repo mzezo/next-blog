@@ -9,7 +9,7 @@ const NewsItem = ({ id, title, description, urlToImage, publishedAt, content }) 
         <NewsItemWrapper>
             <Link href={`News/[id]`} as={`News/${id}`} prefetch={false}>
                 <a>
-                    <img src={urlToImage} alt={title} />
+                    <img src={urlToImage } alt={title} />
                     <NewsItemDetailsWrapper>
                         <IconsWrapper>
                             <HeartOutlined style={{ color: '#89b43e', fontSize: '22px', marginRight: '20px' }} />
@@ -21,8 +21,6 @@ const NewsItem = ({ id, title, description, urlToImage, publishedAt, content }) 
                     </NewsItemDetailsWrapper>
                 </a>
             </Link>
-
-
         </NewsItemWrapper>
     )
 }

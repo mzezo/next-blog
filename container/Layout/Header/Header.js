@@ -54,7 +54,7 @@ const handleShowDrawerMenu = () => {
               <Logo withLink linkTo="/" src={linkDevLogo} />
             </>
           </LogoArea>
-          <Button className={`hamburg-btn`}onClick={handleShowDrawerMenu}> 
+          <Button className={`hamburg-btn`} onClick={handleShowDrawerMenu}> 
             <MenuAltRight size={32} style={{color: '#FFF'}}/>
           </Button>
         </MobileNavbar> 
